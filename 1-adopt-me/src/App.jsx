@@ -1,19 +1,23 @@
 import React from "react";
-import { createRoot } from "react-dom";
+import { createRoot } from "react-dom/client";
+import SeachParams from "./SearchParams";
 
-const Friends = (props) => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, props.name),
-  ]);
-};
+// const App = () => {
+//   return React.createElement("div", {}, [
+//     React.createElement("h1", {}, "Adopt me!"),
+//     React.createElement(Friends, { name: "Sahas" }),
+//     React.createElement(Friends, { name: "Kuldeep" }),
+//     React.createElement(Friends, { name: "Subham" }),
+//   ]);
+// };
 
 const App = () => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, "Adopt me!"),
-    React.createElement(Friends, { name: "Sahas" }),
-    React.createElement(Friends, { name: "Kuldeep" }),
-    React.createElement(Friends, { name: "Subham" }),
-  ]);
+  return (
+    <div>
+      <h1>Adopt me!</h1>
+      <SeachParams />
+    </div>
+  );
 };
 
 // createElement takes in 3 parameters.
