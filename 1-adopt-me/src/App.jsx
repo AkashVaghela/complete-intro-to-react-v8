@@ -1,6 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import SeachParams from "./SearchParams";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import SeachParams from "./components/SearchParams";
+import Details from "./pages/Details";
 
 // const App = () => {
 //   return React.createElement("div", {}, [
@@ -11,12 +14,28 @@ import SeachParams from "./SearchParams";
 //   ]);
 // };
 
+const queryProvider = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      cacheTime: Infinity,
+    },
+  },
+});
+
 const App = () => {
   return (
-    <div>
-      <h1>Adopt me!</h1>
-      <SeachParams />
-    </div>
+    <BrowserRouter>
+      <QueryClientProvider client={queryProvider}>
+        <header>
+          <Link to="/">Adopt me!</Link>
+        </header>
+        <Routes>
+          <Route path="/details/:id" element={<Details />} />
+          <Route path="/" element={<SeachParams />} />
+        </Routes>
+      </QueryClientProvider>
+    </BrowserRouter>
   );
 };
 
