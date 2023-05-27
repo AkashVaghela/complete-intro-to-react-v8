@@ -1,1 +1,5 @@
 [Complete intro to react v8](https://react-v8.holt.courses/)
+[Complete intro to react v7](https://btholt.github.io/complete-intro-to-react-v7/)
+[Complete intro to react v6](https://btholt.github.io/complete-intro-to-react-v6/)
+[Complete intro to react v5](https://btholt.github.io/complete-intro-to-react-v5/)
+[Complete intro to react v4](https://btholt.github.io/complete-intro-to-react-v4/)
